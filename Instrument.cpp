@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// static unordered_map<string, Instrument> instrumentMap;
+unordered_map<string, Instrument> Instrument::instrumentMap;
 Instrument::Instrument() {};
 void Instrument::readcsv(string filename) {
   ifstream File(filename);

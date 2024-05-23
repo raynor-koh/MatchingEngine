@@ -13,8 +13,7 @@ using namespace std;
 
 class Order {
   public:
-    // Order(string time, string id, Instrument instrument, int quantity, Client client, double price, bool side);
-    Order(string time);
+    Order(string time, string id, Instrument &instrument, int quantity, Client &client, double price, bool side);
     static unordered_map<string, Order> ordersMap;
     //amend time to be proper type
     string time;
