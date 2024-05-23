@@ -17,6 +17,7 @@ class Instrument {
     int lotSize;
     static void readcsv(string filename); 
     static void printMap();
+    Instrument();
     Instrument(string id, string currency, int lotSize);
 };
 
