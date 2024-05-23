@@ -1,4 +1,5 @@
-#pragma once
+#ifndef INSTRUMENT_H
+#define INSTRUMENT_H
 #include <iostream>
 #include <string>
 #include <unordered_map>
@@ -15,6 +16,8 @@ class Instrument {
     string currency;
     int lotSize;
     static void readcsv(string filename); 
-    Instrument(string id, string currency, int lotSize);
     static void printMap();
+    Instrument(string id, string currency, int lotSize);
 };
+
+#endif
