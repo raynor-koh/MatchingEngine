@@ -13,7 +13,11 @@ using namespace std;
 
 class Order {
   public:
-    static unordered_set<Order> ordersSet;
+    // Order(string time, string id, Instrument instrument, int quantity, Client client, double price, bool side);
+    Order(string time);
+    static unordered_map<string, Order> ordersMap;
+    //amend time to be proper type
+    string time;
     string id;
     Instrument instrument;
     int quantity;
