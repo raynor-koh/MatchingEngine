@@ -19,6 +19,7 @@ class Client {
     unordered_map<string, int> position;
     // unordered_map<Instrument, int> position;
     static unordered_map<string, Client> clientMap;
+    Client();
     Client(string id, unordered_set<string> currencies, bool positionCheck, int rating);
     static void readcsv(string filename);
     static void printMap();

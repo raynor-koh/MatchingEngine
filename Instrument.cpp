@@ -2,8 +2,8 @@
 
 using namespace std;
 
-// static unordered_map<string, Instrument> instrumentMap;
-
+unordered_map<string, Instrument> Instrument::instrumentMap;
+Instrument::Instrument() {};
 void Instrument::readcsv(string filename) {
   ifstream File(filename);
   if(!File.is_open()) throw runtime_error("Could not open file");
@@ -46,3 +46,4 @@ void Instrument::printMap() {
     cout << p.first << " " << p.second.id << " " << p.second.currency << " " << p.second.lotSize << endl;
   }
 }
+

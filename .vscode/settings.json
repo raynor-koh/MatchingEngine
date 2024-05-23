@@ -13,6 +13,10 @@
     "istream": "cpp",
     "string": "cpp",
     "unordered_set": "cpp",
-    "sstream": "cpp"
+    "sstream": "cpp",
+    "xlocale": "cpp",
+    "xlocnum": "cpp",
+    "limits": "cpp",
+    "list": "cpp"
   }
 }

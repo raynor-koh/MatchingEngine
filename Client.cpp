@@ -10,12 +10,16 @@
 
 
 unordered_map<string, Client> Client::clientMap;
+
+Client::Client() {};
+
 Client::Client(string id, unordered_set<string> currencies, bool positionCheck, int rating) {
   this->id = id;
   this->currencies = currencies;
   this->positionCheck = positionCheck;
   this->rating = rating;
 }
+
 void Client::readcsv(string filename) {
   ifstream File(filename);
   if(!File.is_open()) throw runtime_error("Could not open file");
