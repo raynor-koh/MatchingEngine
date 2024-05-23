@@ -24,4 +24,5 @@ class Order {
     bool side;
     Client client;
     static void readcsv(string filename);
+    static void printMap();
 };

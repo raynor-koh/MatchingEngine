@@ -16,6 +16,7 @@
     "sstream": "cpp",
     "xlocale": "cpp",
     "xlocnum": "cpp",
-    "limits": "cpp"
+    "limits": "cpp",
+    "list": "cpp"
   }
 }

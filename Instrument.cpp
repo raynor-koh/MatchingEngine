@@ -46,3 +46,4 @@ void Instrument::printMap() {
     cout << p.first << " " << p.second.id << " " << p.second.currency << " " << p.second.lotSize << endl;
   }
 }
+

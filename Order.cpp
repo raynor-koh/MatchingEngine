@@ -1,3 +1,4 @@
+#include <time.h>
 #include <iostream>
 #include <string>
 #include "Instrument.h"
@@ -36,20 +37,17 @@ void Order::readcsv(string filename) {
     while (getline(ss, word, ',')) {
       commaSepValues.push_back(word);
     }
-    string readTime;
-    string readID;
-    int quantity;
+    string readTime = commaSepValues[0];
+    string readID = commaSepValues[1];
+    int quantity = stoi(commaSepValues[3]);
     double price;
-    bool side;
-    readID = commaSepValues[1];
+    bool side = commaSepValues[6] == "Buy" ? true : false;
     Instrument instrument = Instrument::instrumentMap.at(commaSepValues[2]);
-    quantity = stoi(commaSepValues[3]);
     Client client = Client::clientMap.at(commaSepValues[4]);
-    side =  commaSepValues[6] == "Buy" ? true : false;
-    if (commaSepValues[6] == "Market") {
+    if (commaSepValues[5] == "Market") {
       price = side ? numeric_limits<double>::infinity() : -numeric_limits<double>::infinity();
     } else {
-      price = stod(commaSepValues[6]);
+      price = stod(commaSepValues[5]);
     }
 
     Order neworder = Order(readTime, readID, instrument, quantity, client, price, side);
@@ -58,4 +56,11 @@ void Order::readcsv(string filename) {
   File.close();
 }
 
+void Order::printMap() {
+  cout << "Printing now!" << endl;
+  for (auto p : Order::ordersMap) {
+    // cout << p.first << " " << p.second.time << endl;
+    cout << p.first << " " << p.second.time << " " << p.second.id << " " << p.second.quantity << " " << p.second.price << " " << p.second.side  << endl;
+  }
+}
 
