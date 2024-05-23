@@ -10,8 +10,10 @@ class Time {
     int minute;
     int sec;
     string strtime;
+    Time();
     Time(string time);
     bool operator <(const Time &rightTime) const;
+    friend ostream& operator<<(ostream &strm, const Time &t);
 };
 
 

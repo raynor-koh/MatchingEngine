@@ -5,6 +5,8 @@
 
 using namespace std;
 
+Time::Time() {};
+
 Time::Time(string time) {
   stringstream ss(time);
   string word;
@@ -23,4 +25,9 @@ bool Time::operator <(const Time &rightTime) const {
     ((this->hour == rightTime.hour) && (this->minute < rightTime.minute)) ||
     ((this->hour == rightTime.hour) && (this->minute == rightTime.minute) && (this->sec < rightTime.sec));
 }
+
+ostream& operator<<(ostream &strm, const Time &t) {
+  return strm << t.strtime;
+}
+
 

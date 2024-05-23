@@ -60,8 +60,7 @@ void Order::readcsv(string filename) {
 void Order::printMap() {
   cout << "Printing now!" << endl;
   for (auto p : Order::ordersMap) {
-    // cout << p.first << " " << p.second.time << endl;
-    // cout << p.first << " " << p.second.time << " " << p.second.id << " " << p.second.quantity << " " << p.second.price << " " << p.second.side  << endl;
+    cout << p.first << " " << p.second.time << " " << p.second.id << " " << p.second.quantity << " " << p.second.price << " " << p.second.side  << endl;
   }
 }
 
