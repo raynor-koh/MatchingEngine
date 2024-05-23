@@ -1,14 +1,8 @@
 #include "Instrument.h"
-#include <iostream>
-#include <string>
-#include <unordered_map>
-#include <fstream>
-#include <vector>
-#include <sstream> // std::stringstream
 
 using namespace std;
 
-static unordered_map<string, Instrument> instrumentMap;
+// static unordered_map<string, Instrument> instrumentMap;
 
 void Instrument::readcsv(string filename) {
   ifstream File(filename);
