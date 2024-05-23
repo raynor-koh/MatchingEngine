@@ -10,6 +10,7 @@
 #include <vector>
 #include <sstream> // std::stringstream
 #include <limits>
+#include "Time.h"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ using namespace std;
 unordered_map<string, Order> Order::ordersMap;
 
 Order::Order(string time, string id, Instrument &instrument, int quantity, Client &client, double price, bool side) {
-  this->time = time;
+  this->time = Time(time);
   this->instrument = instrument;
   this->quantity = quantity;
   this->client = client;
@@ -60,7 +61,7 @@ void Order::printMap() {
   cout << "Printing now!" << endl;
   for (auto p : Order::ordersMap) {
     // cout << p.first << " " << p.second.time << endl;
-    cout << p.first << " " << p.second.time << " " << p.second.id << " " << p.second.quantity << " " << p.second.price << " " << p.second.side  << endl;
+    // cout << p.first << " " << p.second.time << " " << p.second.id << " " << p.second.quantity << " " << p.second.price << " " << p.second.side  << endl;
   }
 }
 

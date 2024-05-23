@@ -1,13 +1,9 @@
 #pragma once
-#include <iostream>
-#include <string>
 #include "Instrument.h"
 #include "Client.h"
+#include <string>
 #include <unordered_map>
 #include <unordered_set>
-#include <fstream>
-#include <vector>
-#include <sstream> // std::stringstream
 
 using namespace std;
 
@@ -16,7 +12,7 @@ class Order {
     Order(string time, string id, Instrument &instrument, int quantity, Client &client, double price, bool side);
     static unordered_map<string, Order> ordersMap;
     //amend time to be proper type
-    string time;
+    Time time;
     string id;
     Instrument instrument;
     int quantity;

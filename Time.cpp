@@ -1,9 +1,21 @@
 #include "Time.h"
+#include <sstream>
+#include <vector>
+#include <string>
 
-Time::Time(int hour, int minute, int sec) {
-  this->hour = hour;
-  this->minute = minute;
-  this->sec = sec;
+using namespace std;
+
+Time::Time(string time) {
+  stringstream ss(time);
+  string word;
+  vector<string> commaSepValues = {};
+  while (getline(ss, word, ':')) {
+    commaSepValues.push_back(word);
+  }
+  this->strtime = time;
+  this->hour = stoi(commaSepValues[0]);
+  this->minute = stoi(commaSepValues[1]);
+  this->sec = stoi(commaSepValues[2]);
 }
 
 bool Time::operator <(const Time &rightTime) const {

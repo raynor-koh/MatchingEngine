@@ -1,12 +1,17 @@
 #ifndef TIME_H
 #define TIME_H
+#include <string>
+
+using namespace std;
 
 class Time {
-  int hour;
-  int minute;
-  int sec;
-  Time(int hour, int minute, int sec);
-  bool operator <(const Time &rightTime) const;
+  public:
+    int hour;
+    int minute;
+    int sec;
+    string strtime;
+    Time(string time);
+    bool operator <(const Time &rightTime) const;
 };
 
 
